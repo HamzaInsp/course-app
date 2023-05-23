@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Courses from "./components/Courses";
 import LoadingPage from "./loading";
+import CourseSearch from "./components/CourseSearch";
 
 export default function HomePage() {
   const [courses, setCourses] = useState([]);
@@ -21,9 +22,12 @@ export default function HomePage() {
   if (loading) {
     return <LoadingPage />;
   }
+
+
   return (
     <>
       <h1> Welcome To Courses Lab</h1>
+      <CourseSearch getSearchResults={(results)=> setCourses(results)}/>
       <Courses courses={courses} />
     </>
   );

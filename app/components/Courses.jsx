@@ -1,9 +1,6 @@
 import Link from "next/link";
 
-
-
 const Courses = ({courses}) => {
-  console.log(courses, "HAMZAAAA")
   return (
     <div className="courses">
       {courses.map((course) => (
